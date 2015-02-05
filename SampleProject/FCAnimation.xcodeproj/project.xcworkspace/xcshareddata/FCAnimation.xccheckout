@@ -10,29 +10,29 @@
 	<string>FCAnimation</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>177EEA27459C374A285DC021E86BCA85366A4BFA</key>
+		<key>E0CBDDDC3E1BB982066F3CC26CA50E346355010E</key>
 		<string>https://github.com/tkcfjips/FCAnimation.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>FCAnimation.xcodeproj</string>
+	<string>SampleProject/FCAnimation.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>177EEA27459C374A285DC021E86BCA85366A4BFA</key>
-		<string>../..</string>
+		<key>E0CBDDDC3E1BB982066F3CC26CA50E346355010E</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/tkcfjips/FCAnimation.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>177EEA27459C374A285DC021E86BCA85366A4BFA</string>
+	<string>E0CBDDDC3E1BB982066F3CC26CA50E346355010E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>177EEA27459C374A285DC021E86BCA85366A4BFA</string>
+			<string>E0CBDDDC3E1BB982066F3CC26CA50E346355010E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>FCAnimation</string>
 		</dict>
