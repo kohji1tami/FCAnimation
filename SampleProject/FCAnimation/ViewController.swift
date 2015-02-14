@@ -23,7 +23,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         "ZoomOut": .ZoomOut,
         "Pop": .Pop,
         "Stretch": .Stretch,
-        "Shake": .Shake
+        "Shake": .Shake,
+        "Flash": .Flash
     ]
 
     override func viewDidLoad() {

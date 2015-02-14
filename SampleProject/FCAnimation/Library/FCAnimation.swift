@@ -22,22 +22,24 @@ class FCAnimation {
         case Pop
         case Stretch
         case Shake
+        case Flash
     }
     
     func performAnimation(view: UIView, duration: NSTimeInterval, delay: NSTimeInterval, type: FCAnimationType) {
         switch type {
-            case .BounceLeft: bounceLeft(view, duration: duration, delay: delay)
-            case .BounceRight: bounceRight(view, duration: duration, delay: delay)
-            case .BounceUp: bounceUp(view, duration: duration, delay: delay)
-            case .BounceDown: bounceDown(view, duration: duration, delay: delay)
-            case .FadeIn: fadeIn(view, duration: duration, delay: delay)
-            case .FadeOut: fadeOut(view, duration: duration, delay: delay)
-            case .ZoomIn: zoomIn(view, duration: duration, delay: delay)
-            case .ZoomOut: zoomOut(view, duration: duration, delay: delay)
-            case .Pop: pop(view, duration: duration, delay: delay)
-            case .Stretch: stretch(view, duration: duration, delay: delay)
-            case .Shake: shake(view, duration: duration, delay: delay)
-            default: return
+        case .BounceLeft: bounceLeft(view, duration: duration, delay: delay)
+        case .BounceRight: bounceRight(view, duration: duration, delay: delay)
+        case .BounceUp: bounceUp(view, duration: duration, delay: delay)
+        case .BounceDown: bounceDown(view, duration: duration, delay: delay)
+        case .FadeIn: fadeIn(view, duration: duration, delay: delay)
+        case .FadeOut: fadeOut(view, duration: duration, delay: delay)
+        case .ZoomIn: zoomIn(view, duration: duration, delay: delay)
+        case .ZoomOut: zoomOut(view, duration: duration, delay: delay)
+        case .Pop: pop(view, duration: duration, delay: delay)
+        case .Stretch: stretch(view, duration: duration, delay: delay)
+        case .Shake: shake(view, duration: duration, delay: delay)
+        case .Flash: flash(view, duration: duration, delay: delay)
+        default: return
         }
     }
 }
@@ -215,6 +217,39 @@ extension FCAnimation {
                                                 
                                         })
                                 })
+                        })
+                })
+        })
+    }
+    
+    private func flash(view: UIView, duration: NSTimeInterval, delay: NSTimeInterval) {
+        view.alpha = 0
+        UIView.animateKeyframesWithDuration(duration/3, delay: delay, options: UIViewKeyframeAnimationOptions.allZeros, animations: {
+            view.alpha = 1
+            }, completion: {(finished: Bool) in
+                UIView.animateKeyframesWithDuration(duration/3, delay: delay, options: UIViewKeyframeAnimationOptions.allZeros, animations: {
+                    view.alpha = 0
+                    }, completion: {(finished: Bool) in
+                        UIView.animateKeyframesWithDuration(duration/3, delay: delay, options: UIViewKeyframeAnimationOptions.allZeros, animations: {
+                            view.alpha = 1
+                            }, completion: {(finished: Bool) in
+                        })
+                })
+        })
+    }
+    
+    private func rotate(view: UIView, duration: NSTimeInterval, delay: NSTimeInterval, angle: Double) {
+        var rotateAngle: CGFloat = CGFloat(angle * M_PI / 180.0)
+        view.transform = CGAffineTransformMakeRotation(rotateAngle/3)
+        UIView.animateKeyframesWithDuration(duration/3, delay: delay, options: UIViewKeyframeAnimationOptions.allZeros, animations: {
+            view.transform = CGAffineTransformMakeRotation(rotateAngle/3)
+            }, completion: {(finished: Bool) in
+                UIView.animateKeyframesWithDuration(duration/3, delay: delay, options: UIViewKeyframeAnimationOptions.allZeros, animations: {
+                    view.transform = CGAffineTransformMakeRotation(rotateAngle/3)
+                    }, completion: {(finished: Bool) in
+                        UIView.animateKeyframesWithDuration(duration/3, delay: delay, options: UIViewKeyframeAnimationOptions.allZeros, animations: {
+                            view.transform = CGAffineTransformMakeRotation(rotateAngle)
+                            }, completion: {(finished: Bool) in
                         })
                 })
         })
